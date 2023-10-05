@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{f4500b9b-2ee8-4a13-85a0-8be5dc1d106a}</ProjectGuid>
+    <RootNamespace>vkbase</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ExternalIncludePath>$(VULKAN_SDK)\Include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</ExternalIncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ExternalIncludePath>$(VULKAN_SDK)\Include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</ExternalIncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ExternalIncludePath>$(VULKAN_SDK)\Include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</ExternalIncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ExternalIncludePath>$(VULKAN_SDK)\Include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</ExternalIncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NOMINMAX;VK_USE_PLATFORM_WIN32_KHR;_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NOMINMAX;VK_USE_PLATFORM_WIN32_KHR;_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NOMINMAX;VK_USE_PLATFORM_WIN32_KHR;_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NOMINMAX;VK_USE_PLATFORM_WIN32_KHR;_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Buffer.hxx" />
+    <ClInclude Include="CommandBuffer.hxx" />
+    <ClInclude Include="CommandBufferFactory.hxx" />
+    <ClInclude Include="CommandPool.hxx" />
+    <ClInclude Include="Compiler.hxx" />
+    <ClInclude Include="DebugUtilsMessenger.hxx" />
+    <ClInclude Include="DescriptorPool.hxx" />
+    <ClInclude Include="DescriptorPoolSetAllocation.hxx" />
+    <ClInclude Include="DescriptorPoolManager.hxx" />
+    <ClInclude Include="DescriptorSet.hxx" />
+    <ClInclude Include="DescriptorSetLayout.hxx" />
+    <ClInclude Include="DescriptorSetLayoutManager.hxx" />
+    <ClInclude Include="DescriptorSetManager.hxx" />
+    <ClInclude Include="Device.hxx" />
+    <ClInclude Include="DummyWindow.hxx" />
+    <ClInclude Include="Fence.hxx" />
+    <ClInclude Include="FlatFramebuffer.hxx" />
+    <ClInclude Include="FlatFramebufferFactory.hxx" />
+    <ClInclude Include="Frame.hxx" />
+    <ClInclude Include="Image.hxx" />
+    <ClInclude Include="ImageBase.hxx" />
+    <ClInclude Include="ImageFactory.hxx" />
+    <ClInclude Include="ImageView.hxx" />
+    <ClInclude Include="Instance.hxx" />
+    <ClInclude Include="ManagedDescriptorSet.hxx" />
+    <ClInclude Include="ManagedSwapchain.hxx" />
+    <ClInclude Include="math_helper.hxx" />
+    <ClInclude Include="PersistantlyMappedBuffer.hxx" />
+    <ClInclude Include="PhysicalDevice.hxx" />
+    <ClInclude Include="PhysicalDeviceComparerer.hxx" />
+    <ClInclude Include="Pipeline.hxx" />
+    <ClInclude Include="PipelineLayout.hxx" />
+    <ClInclude Include="PipelineLayoutManager.hxx" />
+    <ClInclude Include="PresentationQueue.hxx" />
+    <ClInclude Include="PresentationQueueFamilyIndices.hxx" />
+    <ClInclude Include="Queue.hxx" />
+    <ClInclude Include="QueueFamilyIndices.hxx" />
+    <ClInclude Include="read_file.hxx" />
+    <ClInclude Include="RenderPass.hxx" />
+    <ClInclude Include="RenderPassFactory.hxx" />
+    <ClInclude Include="Sampler.hxx" />
+    <ClInclude Include="Semaphore.hxx" />
+    <ClInclude Include="shader_helper.hxx" />
+    <ClInclude Include="StbImage.hxx" />
+    <ClInclude Include="stb_image.h" />
+    <ClInclude Include="stb_image_write.h" />
+    <ClInclude Include="string_helper.hxx" />
+    <ClInclude Include="Surface.hxx" />
+    <ClInclude Include="Swapchain.hxx" />
+    <ClInclude Include="SwapchainFactory.hxx" />
+    <ClInclude Include="SwapchainImage.hxx" />
+    <ClInclude Include="SwapchainSupportDetails.hxx" />
+    <ClInclude Include="UniqueObject.hxx" />
+    <ClInclude Include="vma_helper.hxx" />
+    <ClInclude Include="VulkanError.hxx" />
+    <ClInclude Include="vulkan_helper.hxx" />
+    <ClInclude Include="vulkan_surface_helper.hxx" />
+    <ClInclude Include="vulkan_win32_helper.hxx" />
+    <ClInclude Include="Win32QueueFamilyIndices.hxx" />
+    <ClInclude Include="Win32SurfaceFactory.hxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Buffer.cxx" />
+    <ClCompile Include="CommandBuffer.cxx" />
+    <ClCompile Include="CommandBufferFactory.cxx" />
+    <ClCompile Include="CommandPool.cxx" />
+    <ClCompile Include="Compiler.cxx" />
+    <ClCompile Include="DebugUtilsMessenger.cxx" />
+    <ClCompile Include="DescriptorPool.cxx" />
+    <ClCompile Include="DescriptorPoolSetAllocation.cxx" />
+    <ClCompile Include="DescriptorPoolManager.cxx" />
+    <ClCompile Include="DescriptorSet.cxx" />
+    <ClCompile Include="DescriptorSetLayout.cxx" />
+    <ClCompile Include="DescriptorSetLayoutManager.cxx" />
+    <ClCompile Include="DescriptorSetManager.cxx" />
+    <ClCompile Include="Device.cxx" />
+    <ClCompile Include="DummyWindow.cxx" />
+    <ClCompile Include="Fence.cxx" />
+    <ClCompile Include="FlatFramebuffer.cxx" />
+    <ClCompile Include="FlatFramebufferFactory.cxx" />
+    <ClCompile Include="Frame.cxx" />
+    <ClCompile Include="Image.cxx" />
+    <ClCompile Include="ImageBase.cxx" />
+    <ClCompile Include="ImageFactory.cxx" />
+    <ClCompile Include="ImageView.cxx" />
+    <ClCompile Include="Instance.cxx" />
+    <ClCompile Include="ManagedDescriptorSet.cxx" />
+    <ClCompile Include="ManagedSwapchain.cxx" />
+    <ClCompile Include="PersistantlyMappedBuffer.cxx" />
+    <ClCompile Include="PhysicalDevice.cxx" />
+    <ClCompile Include="PhysicalDeviceComparerer.cxx" />
+    <ClCompile Include="Pipeline.cxx" />
+    <ClCompile Include="PipelineLayout.cxx" />
+    <ClCompile Include="PipelineLayoutManager.cxx" />
+    <ClCompile Include="PresentationQueue.cxx" />
+    <ClCompile Include="PresentationQueueFamilyIndices.cxx" />
+    <ClCompile Include="Queue.cxx" />
+    <ClCompile Include="QueueFamilyIndices.cxx" />
+    <ClCompile Include="read_file.cxx" />
+    <ClCompile Include="RenderPass.cxx" />
+    <ClCompile Include="RenderPassFactory.cxx" />
+    <ClCompile Include="Sampler.cxx" />
+    <ClCompile Include="Semaphore.cxx" />
+    <ClCompile Include="shader_helper.cxx" />
+    <ClCompile Include="StbImage.cxx" />
+    <ClCompile Include="stb_image.cxx" />
+    <ClCompile Include="stb_image_write.cxx" />
+    <ClCompile Include="Surface.cxx" />
+    <ClCompile Include="Swapchain.cxx" />
+    <ClCompile Include="SwapchainFactory.cxx" />
+    <ClCompile Include="SwapchainImage.cxx" />
+    <ClCompile Include="SwapchainSupportDetails.cxx" />
+    <ClCompile Include="vk_mem_alloc.cxx" />
+    <ClCompile Include="vma_helper.cxx" />
+    <ClCompile Include="VulkanError.cxx" />
+    <ClCompile Include="vulkan_helper.cxx" />
+    <ClCompile Include="vulkan_surface_helper.cxx" />
+    <ClCompile Include="vulkan_win32_helper.cxx" />
+    <ClCompile Include="Win32QueueFamilyIndices.cxx" />
+    <ClCompile Include="Win32SurfaceFactory.cxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Random Notes.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

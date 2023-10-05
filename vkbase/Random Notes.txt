@@ -1,0 +1,55 @@
+For SNES editors, basically all image data is being edited all the time. It is
+therefore ideal to use CPU-side buffers where possible.
+
+For the twisty puzzle, the exact opposite scenario occurs. Most buffer data
+(if any?) will be static.
+
+For non-windows OS, it's possible for one device to control one surface, and
+another device to control a different surface, and they are not
+cross-compatible. I'm not really in a position to test this, but it may be worth
+examining in the future (if I can ever manage to create such a scenario).
+https://discord.com/channels/427551838099996672/427951526967902218/851964252209414214
+
+why is async command buffer submission useful? How is this different from queue
+submission which, to my knowledge, is not thread safe. By async, I guess that
+means that I submit it, but I don't wait for a response?
+https://discord.com/channels/427551838099996672/427951526967902218/854864652785156116
+
+vkMapMemory should always be O(1) as it just creates a CPU pointer to GPU
+memory.
+https://discord.com/channels/427551838099996672/427951526967902218/858498683636416532
+
+An image array layer is basically a single bitmap inside of the whole image
+(e.g.v a cubemap would have 6 images for each side. Each image is its own
+layer).
+https://discord.com/channels/427551838099996672/427951526967902218/860288841767190568
+
+For multithreading, I must have one command pool per thread, but it is
+recommended that I have only one whole graphics que and synchronize all the
+separate commands into it.
+https://discord.com/channels/427551838099996672/427951526967902218/862497097110781973
+But I *could* have multiple queues if I wanted to. But not required.
+https://discord.com/channels/427551838099996672/427951526967902218/862498735660204063
+
+Notes on swapchains:
+The common setup for swapchains is to have three images.
+1. I am writing to one (in the graphics queue I assume)
+2. The presentation queue is preparing/presenting one.
+3. ???
+https://discord.com/channels/427551838099996672/427951526967902218/875839171502145586
+
+Get size of unsized buffer:
+https://discord.com/channels/427551838099996672/427951526967902218/876570893495697438
+
+vkAcquireNextImageKHR. We have a fence (and semaphore) and timeout. As I
+understand it now, timeout will wait for a swapchain image to become available,
+where available means it has been queued for presentation back into its
+swapchain via vkQueuePresentKHR. The key nuance now, is that just because an
+image is available does not mean it is ready. This is where fence (or semaphore)
+come in. The image is ready once the presentation queue is finished and is no
+longer reading data from the swapchain image, and this is what fence and
+semaphore signal.
+https://discord.com/channels/427551838099996672/427951526967902218/895110947738361947
+
+Conversation to review about retiring swap chains:
+https://discord.com/channels/427551838099996672/427951526967902218/896104841804410892
